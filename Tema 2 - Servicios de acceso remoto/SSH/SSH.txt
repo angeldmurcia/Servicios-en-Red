@@ -1,0 +1,33 @@
+ssh usuario@IP
+
+sudo shutdown -h now
+
+scp archivo smr@IP:/directorio
+
+scp -r Documentos/ smr@10.4.202.255:/home/smr/Documentos <-- Meter a un servidor
+scp -r smr@10.4.202.255:/home/smr/Documentos/listas.html /home/prueba/destino/listas.html <-- Copiar del servidor
+
+CIFRADO Y DESCIFRADO
+********************
+Para encriptar se usa pública, para desencriptar privada.
+
+Se publica con la pública del receptor y desencripta con la privada del receptor.
+Para el encriptado y desencriptado se necesita (Pública+Privada)
+
+Si encriptas con la privada, alguien con la pública puede descifrar.
+
+sudo apt install openssh-server
+
+EJERCICIO
+*********
+
+scp smr@10.4.202.255:/etc/apache2/sites-available/smr.martinez.conf /home/smr2/Documentos/smr.martinez.conf
+
+editar el archivo smr.martinez.com.conf
+creamos el index.html y lo copiamos a /var/www/smr.angel.com
+
+scp /home/smr2/Documentos/index.html smr@10.4.202.255:/var/www/smr.martinez.com/index.html
+
+scp /home/smr2/Documentos/smr.martinez.com.conf smr@10.4.202.255:/etc/apache2/sites-available/smr.martinez.com.conf
+
+scp /home/smr2/Documentos/smr.saura.com.conf smr@10.4.200.97:/etc/apache2/sites-available/smr.saura.com.conf

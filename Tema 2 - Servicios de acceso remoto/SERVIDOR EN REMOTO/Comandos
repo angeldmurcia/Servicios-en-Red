@@ -1,0 +1,7 @@
+cp html/index.html smr.martinez.com/index.html
+cp html/index.html smr.saura.com/index.html
+cp 000-default.conf smr.matinez.com.conf
+cp 000-default.conf smr.saura.com.conf
+a2ensite smr.martinez.com
+a2ensite smr.saura.com
+a2dissite 000-default·conf

@@ -1,0 +1,12 @@
+SSH
+---
+ssh smr@10.4.202.255
+ssh smr@10.4.200.97 <--- (Cambió la IP)
+
+SCP
+---
+scp /home/smr2/Documentos/smr.martinez.conf smr@10.4.202.255:/etc/apache2/sites-available/smr.martinez.com.conf
+scp /home/smr2/Documentos/index.html smr@10.4.202.255:/var/www/smr.martinez.com/index.html
+
+scp /home/smr2/Documentos/smr.saura.com.conf smr@10.4.200.97:/etc/apache2/sites-available/smr.saura.com.conf
+scp /home/smr2/Documentos/index.html smr@10.4.200.97:/var/www/smr.martinez.com/index.html
