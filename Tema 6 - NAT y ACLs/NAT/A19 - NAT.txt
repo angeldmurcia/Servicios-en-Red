@@ -1,0 +1,5 @@
+A19. NAT
+
+Resuelve los ejercicios de NAT presentes en el pdf adjunto.
+
+Entrega los ficheros .pkt con la resolución de packet tracer y txt con los comandos usados para crear las traducciones NAT.

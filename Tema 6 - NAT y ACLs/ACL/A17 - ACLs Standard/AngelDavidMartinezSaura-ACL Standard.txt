@@ -1,0 +1,47 @@
+A Permitir al host 172.16.1.1 hacer ping a 192.168.1.1. El resto de la red 172.16.x.y no
+puede hacer ping a ese host. Emplear una ACL de entrada
+---
+en
+conf t
+access-list 10 permit 172.16.1.1
+access-list 10 deny 172.16.1.0 0.0.0.255
+access-list 10 permit any
+interface fa0/0
+ip access-group 10 in
+
+B Borrar la ACL anterior
+---
+exit
+no access-list 10
+
+C Resolver el apartado anterior con una ACL de salida. ¿Cuál es la diferencia?
+---
+La diferencia es que mientras que en el A le estamos diciendo que permita la entrada de la interfaz Fa0/0 del router, en el C le estamos diciendo que haga lo mismo pero en la salida de la interfaz Fa1/0.
+
+access-list 10 permit 172.16.1.1
+access-list 10 deny 172.16.1.0 0.0.0.255
+access-list 10 permit any
+interface fa1/0
+ip access-group 10 out
+
+D Permitir al host 192.168.1.1 hacer ping a 172.16.1.2, pero no al resto de la red 172.16.x.y.
+Resolverlo de dos maneras distintas, con una ACL de entrada y otra de salida
+(Aquí vamos a permitir 172.16.1.2 a 192.168.1.1 (Hay que desactivar/eliminar la ACL 10 sino no deja funcionar las siguientes)
+---
+exit
+
+access-list 20 permit 172.16.1.2
+access-list 20 deny 172.16.0.0 0.0.255.255
+access-list 20 permit any
+interface fa1/0
+ip access-group 20 in
+
+D Salida
+---
+exit
+
+access-list 30 permit 172.16.1.2
+access-list 30 deny 172.16.0.0 0.0.255.255
+access-list 30 permit any
+interface fa0/0
+ip access-group 30 out

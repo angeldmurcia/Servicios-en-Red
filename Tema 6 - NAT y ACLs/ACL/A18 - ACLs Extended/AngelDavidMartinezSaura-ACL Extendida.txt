@@ -1,0 +1,67 @@
+A PC1 no comunica con PC4 pero sí con el resto
+----------------------------------------------
+en
+conf t
+access-list 120 deny icmp 11.0.0.1 0.0.0.0 15.0.0.1 0.0.0.0
+access-list 120 permit icmp any any
+interface fa7/0
+ip access-group 120 in
+
+B Borrar ACL
+------------
+en
+conf t
+no access-list 120
+
+C Router 2 Rechaza paquetes de red 15.0.0.0/8
+---------------------------------------------
+en
+conf t
+access-list 120 deny icmp any 15.0.0.0 0.255.255.255
+access-list 120 permit icmp any any
+interface se2/0
+ip access-group 120 in
+
+D Borrar ACL
+------------
+no access-list 120
+
+E Cualquier paquete de las redes 16.0.0.0/8 y 12.0.0.0/8 no llegan a PC0 ni PC5
+-------------------------------------------------------------------------------
+ROUTER 2
+en
+conf t
+access-list 120 deny icmp 16.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
+access-list 120 deny icmp 12.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
+access-list 120 permit icmp any any
+interface fa0/0
+ip access-group 120 out
+
+F Borrar ACL
+------------
+no access-list 120
+
+G PC1 solo acepeta paquetes de PC5
+----------------------------------
+en
+conf t
+access-list 120 permit icmp 11.0.0.1 0.0.0.0 10.0.0.2 0.0.0.0
+interface fa7/0
+ip access-group 120 in
+
+H Borrar ACL
+------------
+no access-list 120
+
+I Las redes 15.0.0.0/8 y 11.0.0.0/8 no llegan de 16.0.0.0/8. A 11.0.0.0/8 no llegan de 10.0.0.0/8 pero sí de 10.0.0.1.
+-----------------------------------------------------------------------------------
+ROUTER 1
+en
+conf t
+access-list 120 deny icmp 15.0.0.0 0.255.255.255 16.0.0.0 0.255.255.255
+access-list 120 permit icmp 11.0.0.0 0.255.255.255 10.0.0.1 0.0.0.0
+access-list 120 deny icmp 11.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
+access-list 120 deny icmp 11.0.0.0 0.255.255.255 16.0.0.0 0.255.255.255
+access-list 120 permit icmp any any
+interface se2/0
+ip access-group 120 out
