@@ -1,0 +1,3 @@
+A16. Correo
+
+Siguiendo el documento "UT5. Configuración de Correo", completa la configuración de Postfix, Dovecot y Thunderbird, haciendo las pruebas que se indicarán para comprobar el correcto funcionamiento de los servicios configurados.
