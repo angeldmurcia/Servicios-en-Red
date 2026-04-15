@@ -1,0 +1,17 @@
+A10. Enrutamiento Estático I
+
+Resuelve los ejercicios de UT1. Enrutamiendo dinámico presentes en las páginas 21 y 22, esta vez usando encaminamiento estático.
+
+Debes guardar los comandos utilizados para configurar todos los routers en un documento con tu nombre y tus apellidos en el siguiente formato de nombre:
+
+NombreApellidos-STATIC.pdf
+
+Ejemplo:
+
+FranciscoGallegoPerona-STATIC.pdf
+
+También debes adjuntar los ficheros .pkt con la configuración de red obtenida.
+
+Por último, debes comprobar correctamente que funciona el encaminamiento y se envían paquetes entre los equipos disponibles en la red. Para ello, usa capturas y realiza indicaciones y ejemplos de envíos, mostrando el modo simulación y describiendo los paquetes ICMP que se envían. Todas estas explicaciónes y capturas deben encontrarse en el fichero pdf adjunto.
+
+
