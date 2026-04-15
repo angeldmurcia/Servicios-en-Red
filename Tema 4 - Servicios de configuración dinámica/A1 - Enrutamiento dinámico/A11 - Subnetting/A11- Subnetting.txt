@@ -1,0 +1,29 @@
+A11. Subnetting
+
+Resuelve los siguientes ejercicios de subnetting para asignar IPs a los equipos de las siguientes redes:
+
+1) Realiza subnetting para 6 redes usando la IP de red 172.16.0.0.
+
+2) Realiza subnetting para 3 redes usando la IP de red 10.0.0.0.
+
+
+Para cada uno de estos ejercicios debemos realizar los siguientes pasos:
+
+a) Subnetting para calcular la tabla de IPs de cada una de las subredes que creamos.
+
+b) Creación de la red en Packet Tracer usando enrutamiento estático, indicando la división de subredes y la dirección de GW de cada subred (se debe indicar como comentario dentro de Packet Tracer).
+
+
+Adjunta los ficheros .pkt para cada uno de los ejercicios, así como un sólo documento con el proceso y las tablas de subnetting obtenidas.
+
+El formato de nombres será el siguiente:
+
+NombreApellidos-STATIC.pdf -> El nombre del fichero donde están las tablas y el proceso
+
+NombreApellidos1-STATIC.pkt -> El nombre del primer ejercicio hecho en Packet Tracer
+
+NombreApellidos2-STATIC.pkt -> El nombre del segundo ejercicio hecho en Packet Tracer
+
+El enrutamiento se puede resolver utilizando tanto RIP como encaminamiento estático.
+
+Sólo es necesario crear 3 de las redes por cada uno de los ejercicios.
